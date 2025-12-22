@@ -19,20 +19,20 @@ type Piece = {
 // 駒の初期配置
 // prettier-ignore
 const createInitialPieces = (): Piece[] => [
-{ id: 1, name: '父', x: 2, y: 1, width: 1, height: 2, colorClass: 'bg-blue-600' },
-  { id: 2, name: '娘', x: 3, y: 1, width: 2, height: 2, colorClass: 'bg-pink-400' },
-  { id: 3, name: '母', x: 5, y: 1, width: 1, height: 2, colorClass: 'bg-red-500' },
+{ id: 1, name: '父', x: 2, y: 1, width: 1, height: 2, colorClass: 'bg-blue-800' },
+  { id: 2, name: '娘', x: 3, y: 1, width: 2, height: 2, colorClass: 'bg-pink-300' },
+  { id: 3, name: '母', x: 5, y: 1, width: 1, height: 2, colorClass: 'bg-rose-700' },
   { id: 4, name: '手代', x: 1, y: 3, width: 1, height: 1, colorClass: 'bg-green-600' },
-  { id: 5, name: '大番頭', x: 2, y: 3, width: 4, height: 1, colorClass: 'bg-purple-600' },
-  { id: 6, name: '兄嫁', x: 6, y: 3, width: 1, height: 1, colorClass: 'bg-yellow-500 text-black' },
-  { id: 7, name: '丁稚', x: 1, y: 4, width: 1, height: 1, colorClass: 'bg-gray-400 text-black' },
-  { id: 8, name: '女中', x: 2, y: 4, width: 2, height: 1, colorClass: 'bg-orange-400 text-black' },
+  { id: 5, name: '大番頭', x: 2, y: 3, width: 4, height: 1, colorClass: 'bg-purple-800' },
+  { id: 6, name: '兄嫁', x: 6, y: 3, width: 1, height: 1, colorClass: 'bg-emerald-800' },
+  { id: 7, name: '丁稚', x: 1, y: 4, width: 1, height: 1, colorClass: 'bg-gray-400' },
+  { id: 8, name: '女中', x: 2, y: 4, width: 2, height: 1, colorClass: 'bg-orange-400' },
   { id: 9, name: '番頭', x: 4, y: 4, width: 2, height: 1, colorClass: 'bg-indigo-600' },
-  { id: 10, name: '丁稚', x: 6, y: 4, width: 1, height: 1, colorClass: 'bg-gray-400 text-black' },
+  { id: 10, name: '丁稚', x: 6, y: 4, width: 1, height: 1, colorClass: 'bg-gray-400' },
   { id: 11, name: '番犬', x: 1, y: 5, width: 1, height: 1, colorClass: 'bg-stone-500' },
   { id: 12, name: '祖父', x: 2, y: 5, width: 2, height: 1, colorClass: 'bg-teal-700' },
   { id: 13, name: '祖母', x: 4, y: 5, width: 2, height: 1, colorClass: 'bg-teal-600' },
-  { id: 14, name: '丁稚', x: 6, y: 5, width: 1, height: 1, colorClass: 'bg-gray-400 text-black' },
+  { id: 14, name: '丁稚', x: 6, y: 5, width: 1, height: 1, colorClass: 'bg-gray-400' },
 ];
 
 // 駒の移動用
@@ -309,7 +309,7 @@ export default function ShelteredDaughter() {
 
       {/* Game Board Container */}
       <div
-        className="relative bg-amber-100 rounded-lg shadow-2xl overflow-hidden border-8 border-amber-900 box-content"
+        className="relative bg-amber-100 rounded-lg shadow-2xl overflow-hidden border-8 border-neutral-500 box-content"
         style={{ width: COLS * CELL_SIZE, height: ROWS * CELL_SIZE }}
         // 盤面全体でイベントを受け取る必要はないが、ドラッグ外れ防止のためコンテナにもガードを入れる
         onPointerUp={() => {
@@ -330,12 +330,12 @@ export default function ShelteredDaughter() {
                 key={`${y}-${x}`}
                 className={`
                   flex items-center justify-center text-xs text-gray-400
-                  ${cell === 1 ? "bg-amber-900 border border-amber-800" : ""}
+                  ${cell === 1 ? "bg-stone-600 border border-stone-600" : ""}
                   ${cell === 9 ? "bg-red-100/50" : ""}
                 `}
               >
                 {cell === 9 && (
-                  <span className="text-red-900/50 font-bold">玄関</span>
+                  <span className="text-neutral-800/50 font-bold">玄関</span>
                 )}
               </div>
             ))
